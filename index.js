@@ -17,6 +17,8 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
     res.render('login');
 });
@@ -25,6 +27,6 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
-app.get('/register', (req, res) => {
-    res.render('register');
+app.get('/signup', (req, res) => {
+    res.render('signup');
 });
